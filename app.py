@@ -5,6 +5,13 @@ import setlists
 app = Flask(__name__)
 api = Api(app)
 
+message = '''Add an Umphrey's song and played date to this URL 
+as using the following format to verify a song was played: /song/*songname*/date/*date*!'''
+
+@app.route('/')
+def hello():
+    return message
+
 
 class SongCheck(Resource):
    def get(self,song,date):
